@@ -1,0 +1,24 @@
+.Highlight ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.Highlight li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.Highlight a {
+  text-decoration: none;
+  color: black;
+}
+
+.Highlight a:hover,
+.Highlight a:active,
+.Highlight a.active {
+  color: #fe923f;
+  text-decoration: underline;
+}

@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios'
+
+import App from './containers/App';
+import './index.css';
+
+axios.defaults.baseURL = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia';
+axios.defaults.headers.get['Content-Type'] = 'application/json';
 
 ReactDOM.render(
   <React.StrictMode>

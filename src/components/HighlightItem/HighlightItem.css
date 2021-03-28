@@ -1,0 +1,63 @@
+.HighlightItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.HighlightItem h2 {
+  font-weight: 400;
+}
+
+.HighlightTotalItem,
+.HighlightAddedItem {
+  width: 50%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: row;
+  column-gap: 8px;
+  text-align: left;
+  align-items: center;
+}
+
+.HighlightTotalItem p,
+.HighlightAddedItem p {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid ghostwhite;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.HighlightTotalItem span,
+.HighlightAddedItem span {
+  font-size: 2em;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 700px) {
+  .HighlightTotalItem span,
+  .HighlightAddedItem span {
+    font-size: 1.5em;
+  }
+
+  .HighlightTotalItem,
+  .HighlightAddedItem {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HighlightTotalItem span,
+  .HighlightAddedItem span {
+    font-size: 1em;
+  }
+
+  .HighlightTotalItem,
+  .HighlightAddedItem {
+    width: 80%;
+  }
+}
