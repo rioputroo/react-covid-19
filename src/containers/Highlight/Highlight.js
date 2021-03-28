@@ -3,6 +3,7 @@ import { NavLink, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import HighlightItem from '../../components/HighlightItem/HighlightItem';
+import HighlightProvince from '../../components/HighlightProvince/HighlightProvince';
 import './Highlight.css';
 
 function Highlight() {
@@ -26,20 +27,25 @@ function Highlight() {
           <ul>
             <li>
               <NavLink to="/" exact>
-                Cases Update
+                Update Kasus
               </NavLink>
             </li>
             <li>
               <NavLink to="/province" exact>
-                Cases by Provinces
+                Kasus by Provinsi
               </NavLink>
             </li>
           </ul>
         </nav>
       </header>
 
+      {dataCovidState ? (
+        <div className="LastUpdated">{dataCovidState.map((item) => item.total.lastUpdated)}</div>
+      ) : null}
+
       <Switch>
         <Route path="/" exact component={() => <HighlightItem covid={dataCovidState} />}></Route>
+        <Route path="/province" exact component={() => <HighlightProvince />}></Route>
       </Switch>
     </div>
   );

@@ -1,0 +1,94 @@
+.ListCovidProvince {
+  width: 50%;
+  margin: 8px auto;
+}
+
+.ListItem {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  grid-auto-flow: row;
+  text-align: start !important;
+  row-gap: 16px;
+}
+
+.ItemContainer {
+  cursor: pointer;
+  padding: 0 8px;
+  border: 1px solid ghostwhite;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.1s ease-in;
+}
+
+.ItemContainer h4,
+.ItemContainerActive h4 {
+  margin: 4px 0;
+}
+
+.ItemContainer:hover {
+  transform: translateY(5%);
+}
+
+.ItemContainerStatus {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 1fr;
+  grid-auto-flow: row;
+}
+
+.ItemContainerStatus p {
+  display: flex;
+  flex-direction: column;
+}
+
+.ItemContainerStatus span {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.PullDownMark {
+  display: flex;
+  justify-content: center;
+}
+
+.PullDownMark img {
+  width: 16px;
+  height: 16px;
+  margin: 8px 0;
+}
+
+.ItemContainerActive {
+  cursor: pointer;
+  padding: 0 8px;
+  border: 1px solid ghostwhite;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.1s ease-out;
+}
+
+.ItemContainerActive > .PullDownMark img {
+  animation: arrowInvert 0.2s linear forwards;
+}
+
+@keyframes arrowInvert {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ListCovidProvince {
+    width: 80%;
+  }
+
+  .ItemContainerStatus span {
+    font-size: 1em;
+  }
+}
